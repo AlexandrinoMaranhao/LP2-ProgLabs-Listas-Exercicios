@@ -63,6 +63,15 @@ public void debitaSaldo(double valor)
 	}		
 }
 
+public Cartao getCartao() {
+	return cartao;
+}
+
+
+public void setCartao(Cartao cartao) {
+	this.cartao = cartao;
+}
+
 
 public String toString() {
 	return "++ Conta Banco Limão Brothers ++ \nNumero = " + numero + cartao + "\nSaldo = " + saldo;
