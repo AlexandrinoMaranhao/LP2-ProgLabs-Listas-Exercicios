@@ -11,7 +11,8 @@ public class ContaTeste {
 	 c1.creditaSaldo(550);
 	 c1.debitaSaldo(50);
 	 c1.verificaSaldo(3443);
-	 
+	 c1.alteraCartao(134568, pf1);
+		
 	 System.out.println(c1.getCartao());
 	 System.out.println(c1);
 	}
