@@ -68,8 +68,12 @@ public Cartao getCartao() {
 }
 
 
-public void setCartao(Cartao cartao) {
+/*public void setCartao(Cartao cartao) {
 	this.cartao = cartao;
+}*/
+
+public void alteraCartao(int numCart, PessoaFisica titular) {
+	this.cartao = new Cartao(numCart, titular);
 }
 
 
