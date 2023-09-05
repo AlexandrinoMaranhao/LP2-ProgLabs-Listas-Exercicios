@@ -89,4 +89,10 @@ public class Conta {
 		return this.senha == senha;
 	}
 
+	public String toString() {
+		return "++ Conta Banco Nacional-Maranhense ++ \nNumero da Conta: " + numero + titular + "\nSaldo da Conta: " + saldo
+				+ "\nHistorico da Conta: " + historico;
+	}
+	
+
 }
