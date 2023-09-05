@@ -21,7 +21,14 @@ public class TesteCaixaEletronico {
 		Conta c4 = new Conta(1, cl4, 101, 900);
 		Conta c5 = new Conta(1, cl5, 213, 950);
 		
-	    CadastroContas cdc1[] =  new CadastroContas [cad1, cad2, cad3, cad4, cad5;
+	     CadastroContas cdc1[] =  new CadastroContas[6];
+		
+			
+	    System.out.println(c1);
+	    System.out.println(c2);
+	    System.out.println(c3);
+	    System.out.println(c4);
+	    System.out.println(c5);
 		
 			
  
