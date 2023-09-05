@@ -25,4 +25,8 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
+	public String toString() {
+		return "\nNome do Cliente: " + nome + "\nCPF do Cliente: " + cpf;
+	}
+	
 }
