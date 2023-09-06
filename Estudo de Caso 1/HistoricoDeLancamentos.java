@@ -20,14 +20,19 @@ public class HistoricoDeLancamentos {
 	}
 	
 
-	public String geraHistoricoDeLancamentos() {
+	public String geraHistoricoDeLancamentos()
+	{
 		StringBuilder historico = new StringBuilder();
-		for (int i = 0; i < this.ultimoLancamento; i++) {
+		
+		for(int i = 1; i <= this.ultimoLancamento; i++)
+		{
 			historico.append(this.lancamentos[i].getDescricao())
-			.append(": CR$")
-			.append(this.lancamentos[i].getValor())
-			.append("\n");
+					 .append(": CR$")
+					 .append(this.lancamentos[i].getValor())
+					 .append("\n");
+					 
 		}
+		
 		return historico.toString();
 	}
 }
