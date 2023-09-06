@@ -2,11 +2,6 @@ package poo.gestaocaixaeletronico;
 import java.util.Scanner;
 
 public class Terminal {
-	
-	private Caixa meuCaixa;
-	private int modoAtual;
-	
-	public class Terminal {
 
 	private Caixa meuCaixa;
 	private int modoAtual;
@@ -20,7 +15,7 @@ public class Terminal {
 
 		opcao = this.getOpcao();
 
-		while (opcao != 4) {
+		while (opcao != 8) {
 			switch (opcao) {
 			case 1:
 				double saldo = this.meuCaixa.consultaSaldo(getInt("NÚMERO DA CONTA"), getInt("SENHA"));
@@ -39,7 +34,21 @@ public class Terminal {
 				}
 				break;
 			case 3:
+				this.meuCaixa.depositaDinheiro();
+				break;
+			case 4:
+				this.meuCaixa.depositaCheque();
+				break;
+			case 5:
+				this.meuCaixa.realizaTransferencia(0, 0);
+				break;
+			case 6:
+				this.meuCaixa.exibeExtrato();
+				break;
+			case 7:
 				this.meuCaixa.recarregarCaixa();
+				break;
+			case 8:
 				break;
 			}
 			opcao = getOpcao();
@@ -56,12 +65,12 @@ public class Terminal {
 		int opcao;
 		do {
 			if (this.modoAtual == 1) {
-				opcao = getInt("++ MENU DO CLIENTE ++ \nOPCÕES \n1) CONSULTA SALDO \n2) SAQUE BANCÁRIO \n4) SAIR");
-				if (opcao != 1 || opcao != 2 || opcao != 4) {
+				opcao = getInt("++ MENU DO CLIENTE ++ \nOPCÕES \n1) CONSULTA SALDO \n2) SAQUE BANCÁRIO \n3)DEPÓSITO EM DINHEIRO \n4)DEPÓSITO EM CHEQUE \n5)TRANSFERÊNCIA BANCÁRIA \n6)EMITE EXTRATO BANCÁRIO \n8) SAIR");
+				if (opcao != 1 || opcao != 2 || opcao != 7) {
 					opcao = 0;
 				}
 			} else {
-				opcao = getInt("MODO SUPERVISOR \nOPÇÕES \n3) RECARREGAR FUNDOS DO CAIXA \n4) SAIR");
+				opcao = getInt("++ MODO SUPERVISOR ++ \nOPÇÕES \n7) RECARREGAR FUNDOS DO CAIXA \n8) SAIR");
 				if (opcao != 3 || opcao != 4) {
 					opcao = 0;
 				}
