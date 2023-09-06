@@ -29,7 +29,7 @@ public class Caixa {
 
 		Conta conta = this.bdContas.buscaConta(numeroDaConta);
 
-		if (conta == null || !conta.debitaValor(valor, senha, "SAQUE AUTOMÁTICO")) {
+		if (conta == null || !conta.debitaValor(valor, senha, "\nSAQUE AUTOMÁTICO")) {
 			return false;
 		}
 		this.liberaCedulas((int) (valor % 50));
@@ -40,7 +40,59 @@ public class Caixa {
 		}
 		return true;
 	}
+	
+	public boolean depositaDinheiro()
+	{
+		if (valor < 0 || (valor % 50) != 0 || valor > 500 || valor > this.fundosCaixa) {
+			return false;
+		}
 
+		Conta conta = this.bdContas.buscaConta(numeroDaConta);
+
+		if (conta == null || !conta.debitaValor(valor, senha, "\nSAQUE AUTOMÁTICO")) {
+			return false;
+		}
+		this.liberaCedulas((int) (valor % 50));
+		this.fundosCaixa -= valor;
+		if (this.fundosCaixa < 500) {
+			this.meuTerminal.setModo(0);
+			System.out.println("O CAIXA ELETRÔNICO ESTÁ NA RESERVA EMERGENCIAL DE FUNDOS, ESPERE ATÉ A PRÓXIMA RECARGA");
+		}
+		return true;
+	}
+	
+	public boolean depositaCheque() 
+	{
+		if (valor < 0 || (valor % 50) != 0 || valor > 500 || valor > this.fundosCaixa) {
+			return false;
+		}
+
+		Conta conta = this.bdContas.buscaConta(numeroDaConta);
+
+		if (conta == null || !conta.debitaValor(valor, senha, "\nSAQUE AUTOMÁTICO")) {
+			return false;
+		}
+		this.liberaCedulas((int) (valor % 50));
+		this.fundosCaixa -= valor;
+		if (this.fundosCaixa < 500) {
+			this.meuTerminal.setModo(0);
+			System.out.println("O CAIXA ELETRÔNICO ESTÁ NA RESERVA EMERGENCIAL DE FUNDOS, ESPERE ATÉ A PRÓXIMA RECARGA");
+		}
+		return true;
+	}
+	
+	public boolean realizaTransferencia(int numeroContaOrigem, int numeroContaDestino)
+	{
+		return true;
+		
+	}
+	
+	public boolean exibeExtrato(int numeroConta)
+	{
+		//if
+		return true;
+	}
+	
 	public void recarregarCaixa() {
 		this.fundosCaixa = 2000;
 		this.meuTerminal.setModo(1);
@@ -53,3 +105,4 @@ public class Caixa {
 		}
 	}
 }
+
