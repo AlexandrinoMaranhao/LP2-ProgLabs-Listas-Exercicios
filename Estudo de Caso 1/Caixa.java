@@ -36,8 +36,7 @@ public class Caixa {
 		this.fundosCaixa -= valor;
 		if (this.fundosCaixa < 500) {
 			this.meuTerminal.setModo(0);
-			System.out
-					.println("O CAIXA ELETRÔNICO ESTÁ NA RESERVA EMERGENCIAL DE FUNDOS, ESPERE ATÉ A PRÓXIMA RECARGA");
+			System.out.println("O CAIXA ELETRÔNICO ESTÁ NA RESERVA EMERGENCIAL DE FUNDOS, ESPERE ATÉ A PRÓXIMA RECARGA");
 		}
 		return true;
 	}
