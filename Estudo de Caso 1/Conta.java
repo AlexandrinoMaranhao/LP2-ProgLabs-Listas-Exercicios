@@ -63,7 +63,7 @@ public class Conta {
 		{
 		this.saldo += valor;
 		this.historico.insereLancamento(new Lancamento(operacaoBancaria, valor));
-		System.out.println("VALOR DE CR$ " + valor + "CREDITADO COM SUCESSO");
+		System.out.println("VALOR DE CR$" + valor + " CREDITADO COM SUCESSO");
 		return true;
 		}
 		else
@@ -76,7 +76,7 @@ public class Conta {
 		if (valor > 0 && this.saldo > 0 && senhaEhValida(senha)) {
 			this.saldo -= valor;
 			this.historico.insereLancamento(new Lancamento(operacaoBancaria, -valor));
-			System.out.println("VALOR DE CR$ " + valor + "DEBITADO COM SUCESSO");
+			System.out.println("VALOR DE CR$ " + valor + " DEBITADO COM SUCESSO");
 			return true;
 		}
 		else 
@@ -90,8 +90,8 @@ public class Conta {
 	}
 
 	public String toString() {
-		return "++ Conta Banco Nacional-Maranhense ++ \nNumero da Conta: " + numero + titular + "\nSaldo da Conta: " + saldo
-				+ "\nHistorico da Conta: " + historico;
+		return "++ Conta Banco Estadual do Maranhão e Grão-Pará ++ \nNumero da Conta: " + numero + titular + "\nSaldo da Conta: " + saldo;
+			//"\nHistorico da Conta: " + historico;
 	}
 	
 
