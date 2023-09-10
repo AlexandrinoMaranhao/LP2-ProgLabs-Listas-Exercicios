@@ -25,8 +25,7 @@ public class Terminal {
 					System.out.println("SENHA OU CONTA INVÁLIDA, IMPOSSÍVEL ACESSAR SALDO");
 				}
 			case 2:
-				boolean b = this.meuCaixa.efetuaSaque(getInt("NÚMERO DA CONTA"), (double) getInt("VALOR"),
-						getInt("SENHA"));
+				boolean b = this.meuCaixa.efetuaSaque(getInt("NÚMERO DA CONTA"), (double) getInt("VALOR"), getInt("SENHA"));
 				if (b) {
 					System.out.println("RETIRE AS CÉDULAS DE DINHEIRO");
 				} else {
@@ -34,16 +33,36 @@ public class Terminal {
 				}
 				break;
 			case 3:
-				this.meuCaixa.depositaDinheiro();
+				boolean c = this.meuCaixa.depositaDinheiro(getInt("NÚMERO DA CONTA"), (double) getInt("VALOR"));
+				if (c)  {
+					System.out.println("DEPÓSITO DE DINHEIRO EM ESPÉCIE FEITO COM SUCESSO");
+				} else  {
+					System.out.println("PEDIDO DE DEPÓSITO EM ESPÉCIE RECUSADO, TENTE NOVAMENTE OU DIRIJA-SE À AGÊNCIA MAIS PRÓXIMA");
+				}
 				break;
 			case 4:
-				this.meuCaixa.depositaCheque();
+				boolean d = this.meuCaixa.depositaCheque(getInt("NÚMERO DA CONTA"), (double) getInt("VALOR"));
+				if (d)  {
+					System.out.println("DEPÓSITO DE CHEQUE REALIZADO COM SUCESSO");
+				} else  {
+					System.out.println("PEDIDO DE DEPÓSITO EM CHEQUE RECUSADO, VERIFIQUE SE NÃO É UM CHQUE SEM FUNDO E TENTE NOVAMENTE MAIS TARDE");
+				}
 				break;
 			case 5:
-				this.meuCaixa.realizaTransferencia(0, 0);
+				boolean e = this.meuCaixa.realizaTransferencia(getInt("NÚMERO DA CONTA DE ORIGEM") + getInt("NÚMERO DA CONTA DE DESTINO"), getInt("SENHA DA CONTA DE ORIGEM"),(double)getInt("VALOR") );
+				if (e)  {
+					System.out.println("TRANSFERÊNCIA BANCÁRIA REALIZADA COM SUCESSO");
+				} else  {
+					System.out.println("TRANSFERÊNCIA RECUSADA, TENTE NOVAMENTE MAIS TARDE");
+				}
 				break;
 			case 6:
-				this.meuCaixa.exibeExtrato();
+				boolean f = this.meuCaixa.exibeExtrato(getInt("NÚMERO DA CONTA"), getInt("NÚMERO DE LANÇAMENTOS"));
+				if (f)  {
+					System.out.println("ESSE É O EXTRATO BANCÁRIO DA DEZENA MAIS RECENTE DE TRANSAÇÕES BANCÁRIAS");
+				} else  {
+					System.out.println("PEDIDO DE SAQUE RECUSADO, TENTE NOVAMENTE MAIS TARDE");
+				}
 				break;
 			case 7:
 				this.meuCaixa.recarregarCaixa();
@@ -66,12 +85,12 @@ public class Terminal {
 		do {
 			if (this.modoAtual == 1) {
 				opcao = getInt("++ MENU DO CLIENTE ++ \nOPCÕES \n1) CONSULTA SALDO \n2) SAQUE BANCÁRIO \n3)DEPÓSITO EM DINHEIRO \n4)DEPÓSITO EM CHEQUE \n5)TRANSFERÊNCIA BANCÁRIA \n6)EMITE EXTRATO BANCÁRIO \n8) SAIR");
-				if (opcao != 1 || opcao != 2 || opcao != 7) {
+				if(opcao != 1 || opcao != 2 || opcao != 3 || opcao != 4 || opcao != 5 || opcao != 6 || opcao != 8) {
 					opcao = 0;
 				}
 			} else {
 				opcao = getInt("++ MODO SUPERVISOR ++ \nOPÇÕES \n7) RECARREGAR FUNDOS DO CAIXA \n8) SAIR");
-				if (opcao != 3 || opcao != 4) {
+				if(opcao != 7 || opcao != 8) {
 					opcao = 0;
 				}
 			}
