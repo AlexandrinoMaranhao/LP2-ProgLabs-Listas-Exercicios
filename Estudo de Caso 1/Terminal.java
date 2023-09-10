@@ -85,12 +85,12 @@ public class Terminal {
 		do {
 			if (this.modoAtual == 1) {
 				opcao = getInt("++ MENU DO CLIENTE ++ \nOPCÕES \n1)CONSULTA SALDO \n2)SAQUE BANCÁRIO \n3)DEPÓSITO EM DINHEIRO \n4)DEPÓSITO EM CHEQUE \n5)TRANSFERÊNCIA BANCÁRIA \n6)EMITE EXTRATO BANCÁRIO \n8)SAIR");
-				if(opcao != 1 || opcao != 2 || opcao != 3 || opcao != 4 || opcao != 5 || opcao != 6 || opcao != 8) {
+				if(opcao != 1 & opcao != 2 & opcao != 3 & opcao != 4 & opcao != 5 & opcao != 6 & opcao != 8) {
 					opcao = 0;
 				}
 			} else {
 				opcao = getInt("++ MODO SUPERVISOR ++ \nOPÇÕES \n7)RECARREGAR FUNDOS DO CAIXA \n8)SAIR");
-				if(opcao != 7 || opcao != 8) {
+				if(opcao != 7 & opcao != 8) {
 					opcao = 0;
 				}
 			}
