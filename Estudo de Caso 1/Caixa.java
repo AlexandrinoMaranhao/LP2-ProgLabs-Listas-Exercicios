@@ -42,55 +42,48 @@ public class Caixa {
 		return true;
 	}
 	
-	public boolean depositaDinheiro()
-	{
-		if (valor < 0 || (valor % 50) != 0 || valor > 500 || valor > this.fundosCaixa) {
-			return false;
-		}
+	public boolean depositaDinheiro(int numeroDaConta, double valor) {
+		Conta conta;
+		conta = this.bdContas.buscaConta(numeroDaConta);
 
-		Conta conta = this.bdContas.buscaConta(numeroDaConta);
-
-		if (conta == null || !conta.debitaValor(valor, senha, "\nSAQUE AUTOMÁTICO")) {
+		if (conta == null || !conta.creditaValor(valor, numeroDaConta, "\nDEPÓSITO EM ESPÉCIE")) {
 			return false;
-		}
-		this.liberaCedulas((int) (valor % 50));
-		this.fundosCaixa -= valor;
-		if (this.fundosCaixa < 500) {
-			this.meuTerminal.setModo(0);
-			System.out.println("O CAIXA ELETRÔNICO ESTÁ NA RESERVA EMERGENCIAL DE FUNDOS, ESPERE ATÉ A PRÓXIMA RECARGA");
 		}
 		return true;
 	}
 	
-	public boolean depositaCheque() 
-	{
-		if (valor < 0 || (valor % 50) != 0 || valor > 500 || valor > this.fundosCaixa) {
-			return false;
-		}
+	public boolean depositaCheque(int numeroDaConta, double valor)  {
+		Conta conta;
+		conta = this.bdContas.buscaConta(numeroDaConta);
 
-		Conta conta = this.bdContas.buscaConta(numeroDaConta);
-
-		if (conta == null || !conta.debitaValor(valor, senha, "\nSAQUE AUTOMÁTICO")) {
+		if (conta == null || !conta.creditaValor(valor, numeroDaConta, "\nDEPÓSITO EM CHEQUE")) {
 			return false;
-		}
-		this.liberaCedulas((int) (valor % 50));
-		this.fundosCaixa -= valor;
-		if (this.fundosCaixa < 500) {
-			this.meuTerminal.setModo(0);
-			System.out.println("O CAIXA ELETRÔNICO ESTÁ NA RESERVA EMERGENCIAL DE FUNDOS, ESPERE ATÉ A PRÓXIMA RECARGA");
 		}
 		return true;
 	}
 	
-	public boolean realizaTransferencia(int numeroContaOrigem, int numeroContaDestino)
-	{
-		return true;
+	public boolean realizaTransferencia(int senha, int numeroDaConta, double valor) {
+		Conta contaOrigem = this.bdContas.buscaConta(numeroDaConta);
+		Conta contaDestino = this.bdContas.buscaConta(numeroDaConta);
+		if(contaOrigem == null || contaDestino == null || this.consultaSaldo(numeroDaConta, numeroDaConta) != -1) {
+			return false;
+		}
+		else
+			contaOrigem.debitaValorTransferencia(valor, numeroDaConta, senha,  "DÉBITO DE TRANSFERÊNCIA");
+			contaDestino.creditaValor(valor, numeroDaConta, "CRÉDITO DE TRANSFERÊNCIA");
+			return true;
+	}
+	
+	public boolean exibeExtrato(int numeroDaConta, int numeroDeLancamentos) {
+		Conta conta = this.bdContas.buscaConta(numeroDaConta);
+		if(conta == null) {
+			return false;
+		}
 		
-	}
-	
-	public boolean exibeExtrato(int numeroConta)
-	{
-		//if
+		else
+		System.out.println("ESSE É O HISTÓRICO DAS ÚLTIMAS 10 OPERAÇÕES REALIZADAS NA CONTA DE NÚMERO: " + numeroDaConta);
+		HistoricoDeLancamentos historico = new HistoricoDeLancamentos(numeroDeLancamentos);
+		historico.geraHistoricoDeLancamentos();
 		return true;
 	}
 	
