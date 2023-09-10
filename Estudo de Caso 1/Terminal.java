@@ -20,13 +20,13 @@ public class Terminal {
 			case 1:
 				double saldo = this.meuCaixa.consultaSaldo(getInt("NÚMERO DA CONTA"), getInt("SENHA"));
 				if (saldo != -1) {
-					System.out.println("SALDO ATUAL: CR$ " + saldo);
+					System.out.println("SALDO ATUAL: CR$" + saldo);
 				} else {
 					System.out.println("SENHA OU CONTA INVÁLIDA, IMPOSSÍVEL ACESSAR SALDO");
 				}
 			case 2:
 				boolean b = this.meuCaixa.efetuaSaque(getInt("NÚMERO DA CONTA"), (double) getInt("VALOR"), getInt("SENHA"));
-				if (b) {
+				if (b == true) {
 					System.out.println("RETIRE AS CÉDULAS DE DINHEIRO");
 				} else {
 					System.out.println("PEDIDO DE SAQUE RECUSADO, TENTE NOVAMENTE MAIS TARDE");
@@ -34,7 +34,7 @@ public class Terminal {
 				break;
 			case 3:
 				boolean c = this.meuCaixa.depositaDinheiro(getInt("NÚMERO DA CONTA"), (double) getInt("VALOR"));
-				if (c)  {
+				if (c == true)  {
 					System.out.println("DEPÓSITO DE DINHEIRO EM ESPÉCIE FEITO COM SUCESSO");
 				} else  {
 					System.out.println("PEDIDO DE DEPÓSITO EM ESPÉCIE RECUSADO, TENTE NOVAMENTE OU DIRIJA-SE À AGÊNCIA MAIS PRÓXIMA");
@@ -42,7 +42,7 @@ public class Terminal {
 				break;
 			case 4:
 				boolean d = this.meuCaixa.depositaCheque(getInt("NÚMERO DA CONTA"), (double) getInt("VALOR"));
-				if (d)  {
+				if (d == true)  {
 					System.out.println("DEPÓSITO DE CHEQUE REALIZADO COM SUCESSO");
 				} else  {
 					System.out.println("PEDIDO DE DEPÓSITO EM CHEQUE RECUSADO, VERIFIQUE SE NÃO É UM CHEQUE SEM FUNDO E TENTE NOVAMENTE MAIS TARDE");
@@ -50,16 +50,16 @@ public class Terminal {
 				break;
 			case 5:
 				boolean e = this.meuCaixa.realizaTransferencia(getInt("NÚMERO DA CONTA DE ORIGEM") + getInt("NÚMERO DA CONTA DE DESTINO"), getInt("SENHA DA CONTA DE ORIGEM"),(double)getInt("VALOR") );
-				if (e)  {
+				if (e === true)  {
 					System.out.println("TRANSFERÊNCIA BANCÁRIA REALIZADA COM SUCESSO");
 				} else  {
 					System.out.println("TRANSFERÊNCIA RECUSADA, TENTE NOVAMENTE MAIS TARDE");
 				}
 				break;
 			case 6:
-				boolean f = this.meuCaixa.exibeExtrato(getInt("NÚMERO DA CONTA"), getInt("NÚMERO DE LANÇAMENTOS"));
-				if (f)  {
-					System.out.println("ESSE É O EXTRATO BANCÁRIO DA DEZENA MAIS RECENTE DE TRANSAÇÕES BANCÁRIAS");
+				boolean f = this.meuCaixa.exibeExtrato(getInt("NÚMERO DA CONTA"));
+				if (f == true)  {
+					System.out.println("EXTRATO BANCÁRIO EMITIDO DE FORMA AUTOMÁTICA");
 				} else  {
 					System.out.println("PEDIDO DE EMISSÃO DE EXTRATO RECUSADO, TENTE NOVAMENTE MAIS TARDE");
 				}
@@ -102,7 +102,6 @@ public class Terminal {
 		Scanner r = new Scanner(System.in);
 		System.out.println("Entre com " + string);
 
-		try {
 			if (r.hasNextInt()) {
 				return r.nextInt();
 			} else {
@@ -110,9 +109,7 @@ public class Terminal {
 				System.out.println("ERRO NA LEITURA DE DADOS");
 				return 0;
 			}
-		} finally {
-			r.close();
-
+		
 		}
 	}
 }
