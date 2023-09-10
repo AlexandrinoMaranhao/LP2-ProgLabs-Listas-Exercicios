@@ -1,6 +1,7 @@
 package poo.gestaocaixaeletronico;
 import poo.gestaocontas.Conta;
 import poo.gestaocontas.HistoricoDeLancamentos;
+import poo.gestaocontas.Lancamento;
 
 public class Caixa {
 	private Terminal meuTerminal;
@@ -74,7 +75,7 @@ public class Caixa {
 			return true;
 	}
 	
-	public boolean exibeExtrato(int numeroDaConta, int numeroDeLancamentos) {
+	public boolean exibeExtrato(int numeroDaConta) {
 		Conta conta = this.bdContas.buscaConta(numeroDaConta);
 		if(conta == null) {
 			return false;
@@ -95,7 +96,7 @@ public class Caixa {
 	private void liberaCedulas(int quantidade) {
 		while (quantidade-- > 0) {
 			System.out.println("===/ BANCO NACIONAL DA REPÚBLICA FEDERATIVA DE BRUZUNDANGA /===");
-			System.out.println("[|  CÉDULA DE CR$50,00 |]");
+			System.out.println("[|	 CÉDULA DE CR$50,00	|]");
 		}
 	}
 }
