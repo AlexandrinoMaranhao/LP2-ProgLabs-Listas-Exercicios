@@ -5,7 +5,7 @@ import poo.gestaocontas.HistoricoDeLancamentos;
 public class Caixa {
 	private Terminal meuTerminal;
 	private CadastroContas bdContas;
-	private double fundosCaixa;
+	private double fundosCaixa = 2000;
 
 	public Caixa(Terminal terminal, CadastroContas bd) {
 		this.meuTerminal = terminal;
@@ -33,7 +33,7 @@ public class Caixa {
 		if (conta == null || !conta.debitaValor(valor, senha, "\nSAQUE AUTOMÁTICO")) {
 			return false;
 		}
-		this.liberaCedulas((int) (valor % 50));
+		this.liberaCedulas((int) (valor/50));
 		this.fundosCaixa -= valor;
 		if (this.fundosCaixa < 500) {
 			this.meuTerminal.setModo(0);
@@ -69,8 +69,8 @@ public class Caixa {
 			return false;
 		}
 		else
-			contaOrigem.debitaValorTransferencia(valor, numeroDaConta, senha,  "DÉBITO DE TRANSFERÊNCIA");
-			contaDestino.creditaValor(valor, numeroDaConta, "CRÉDITO DE TRANSFERÊNCIA");
+			contaOrigem.debitaValorTransferencia(valor, numeroDaConta, senha,  "\nDÉBITO DE TRANSFERÊNCIA");
+			contaDestino.creditaValor(valor, numeroDaConta, "\nCRÉDITO DE TRANSFERÊNCIA");
 			return true;
 	}
 	
@@ -81,7 +81,7 @@ public class Caixa {
 		}
 		
 		else
-		System.out.println("ESSE É O HISTÓRICO DAS ÚLTIMAS 10 OPERAÇÕES REALIZADAS NA CONTA DE NÚMERO: " + numeroDaConta);
+		System.out.println("ESSE É O HISTÓRICO DAS ÚLTIMAS 10 OPERAÇÕES REALIZADAS NA CONTA DE NÚMERO " + numeroDaConta);
 		HistoricoDeLancamentos historico = new HistoricoDeLancamentos(numeroDeLancamentos);
 		historico.geraHistoricoDeLancamentos();
 		return true;
@@ -95,7 +95,7 @@ public class Caixa {
 	private void liberaCedulas(int quantidade) {
 		while (quantidade-- > 0) {
 			System.out.println("===/ BANCO NACIONAL DA REPÚBLICA FEDERATIVA DE BRUZUNDANGA /===");
-			System.out.println("|\n|\n|\n|\n CÉDULA DE CR$ 50,00 |\n|\n|\n|\n|");
+			System.out.println("[|  CÉDULA DE CR$50,00 |]");
 		}
 	}
 }
