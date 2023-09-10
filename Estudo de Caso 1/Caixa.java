@@ -1,5 +1,6 @@
 package poo.gestaocaixaeletronico;
 import poo.gestaocontas.Conta;
+import poo.gestaocontas.HistoricoDeLancamentos;
 
 public class Caixa {
 	private Terminal meuTerminal;
