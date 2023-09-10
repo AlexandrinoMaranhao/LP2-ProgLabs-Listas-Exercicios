@@ -45,7 +45,7 @@ public class Terminal {
 				if (d)  {
 					System.out.println("DEPÓSITO DE CHEQUE REALIZADO COM SUCESSO");
 				} else  {
-					System.out.println("PEDIDO DE DEPÓSITO EM CHEQUE RECUSADO, VERIFIQUE SE NÃO É UM CHQUE SEM FUNDO E TENTE NOVAMENTE MAIS TARDE");
+					System.out.println("PEDIDO DE DEPÓSITO EM CHEQUE RECUSADO, VERIFIQUE SE NÃO É UM CHEQUE SEM FUNDO E TENTE NOVAMENTE MAIS TARDE");
 				}
 				break;
 			case 5:
@@ -61,7 +61,7 @@ public class Terminal {
 				if (f)  {
 					System.out.println("ESSE É O EXTRATO BANCÁRIO DA DEZENA MAIS RECENTE DE TRANSAÇÕES BANCÁRIAS");
 				} else  {
-					System.out.println("PEDIDO DE SAQUE RECUSADO, TENTE NOVAMENTE MAIS TARDE");
+					System.out.println("PEDIDO DE EMISSÃO DE EXTRATO RECUSADO, TENTE NOVAMENTE MAIS TARDE");
 				}
 				break;
 			case 7:
