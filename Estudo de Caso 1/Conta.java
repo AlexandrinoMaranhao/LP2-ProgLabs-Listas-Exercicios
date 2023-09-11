@@ -89,7 +89,7 @@ public class Conta {
 		if (valor > 0 && this.saldo > 0 && senhaEhValida(senha) && numeroDaConta != 0) {
 			this.saldo -= valor;
 			this.historico.insereLancamento(new Lancamento(operacaoBancaria, -valor));
-			System.out.println("VALOR DE CR$" + valor + " DEBITADO E TRANSFERIDO COM SUCESSO");
+			System.out.println("VALOR DE CR$" + valor + " DEBITADO DO SALDO E TRANSFERIDO COM SUCESSO");
 			return true;
 		}
 		else 
