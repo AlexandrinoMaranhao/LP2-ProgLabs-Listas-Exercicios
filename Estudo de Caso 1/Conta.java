@@ -58,7 +58,7 @@ public class Conta {
 		return -1;
 	}
 
-	public boolean creditaValor(double valor, String operacaoBancaria) {
+	public boolean creditaValor(double valor, int numeroDaConta, String operacaoBancaria) {
 		if (valor > 0)
 		{
 		this.saldo += valor;
@@ -72,7 +72,7 @@ public class Conta {
 		}
 	}
 
-	public boolean debitaValor(double valor, int senha, String operacaoBancaria) {
+	public boolean debitaValor(double valor, int numeroDaConta, int senha, String operacaoBancaria) {
 		if (valor > 0 && this.saldo > 0 && senhaEhValida(senha)) {
 			this.saldo -= valor;
 			this.historico.insereLancamento(new Lancamento(operacaoBancaria, -valor));
@@ -85,7 +85,7 @@ public class Conta {
 		}
 	}
 
-	public boolean debitaValorTransferencia(double valor,int numeroDaConta, int senha, String operacaoBancaria) {
+	public boolean debitaValorTransferencia(double valor, int numeroDaConta, int senha, String operacaoBancaria) {
 		if (valor > 0 && this.saldo > 0 && senhaEhValida(senha) && numeroDaConta != 0) {
 			this.saldo -= valor;
 			this.historico.insereLancamento(new Lancamento(operacaoBancaria, -valor));
