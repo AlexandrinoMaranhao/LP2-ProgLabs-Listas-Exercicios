@@ -31,7 +31,7 @@ public class Caixa {
 
 		Conta conta = this.bdContas.buscaConta(numeroDaConta);
 
-		if (conta == null || !conta.debitaValor(valor, senha, "\nSAQUE AUTOMÁTICO")) {
+		if (conta == null || !conta.debitaValor(valor, numeroDaConta, senha, " SAQUE AUTOMÁTICO")) {
 			return false;
 		}
 		this.liberaCedulas((int) (valor/50));
@@ -47,7 +47,7 @@ public class Caixa {
 		Conta conta;
 		conta = this.bdContas.buscaConta(numeroDaConta);
 
-		if (conta == null || !conta.creditaValor(valor, numeroDaConta, "\nDEPÓSITO EM ESPÉCIE")) {
+		if (conta == null || !conta.creditaValor(valor, numeroDaConta, " DEPÓSITO EM ESPÉCIE")) {
 			return false;
 		}
 		return true;
@@ -57,21 +57,21 @@ public class Caixa {
 		Conta conta;
 		conta = this.bdContas.buscaConta(numeroDaConta);
 
-		if (conta == null || !conta.creditaValor(valor, numeroDaConta, "\nDEPÓSITO EM CHEQUE")) {
+		if (conta == null || !conta.creditaValor(valor, numeroDaConta, " DEPÓSITO EM CHEQUE")) {
 			return false;
 		}
 		return true;
 	}
 	
-	public boolean realizaTransferencia(int senha, int numeroDaConta, double valor) {
+	public boolean realizaTransferencia(int numeroDaConta, int senha, int numeroDaContaD, double valor) {
 		Conta contaOrigem = this.bdContas.buscaConta(numeroDaConta);
-		Conta contaDestino = this.bdContas.buscaConta(numeroDaConta);
-		if(contaOrigem == null || contaDestino == null || this.consultaSaldo(numeroDaConta, numeroDaConta) != -1) {
+		Conta contaDestino = this.bdContas.buscaConta(numeroDaContaD);
+		if(contaOrigem == null || contaDestino == null || this.consultaSaldo(numeroDaConta, numeroDaContaD) != -1) {
 			return false;
 		}
 		else
-			contaOrigem.debitaValorTransferencia(valor, numeroDaConta, senha,  "\nDÉBITO DE TRANSFERÊNCIA");
-			contaDestino.creditaValor(valor, numeroDaConta, "\nCRÉDITO DE TRANSFERÊNCIA");
+			contaOrigem.debitaValorTransferencia(valor, numeroDaConta, senha,  " DÉBITO DE TRANSFERÊNCIA");
+			contaDestino.creditaValor(valor, numeroDaContaD, " CRÉDITO DE TRANSFERÊNCIA");
 			return true;
 	}
 	
