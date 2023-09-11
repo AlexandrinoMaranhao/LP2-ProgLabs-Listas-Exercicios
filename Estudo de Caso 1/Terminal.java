@@ -49,8 +49,8 @@ public class Terminal {
 				}
 				break;
 			case 5:
-				boolean e = this.meuCaixa.realizaTransferencia(getInt("NÚMERO DA CONTA DE ORIGEM") + getInt("NÚMERO DA CONTA DE DESTINO"), getInt("SENHA DA CONTA DE ORIGEM"),(double)getInt("VALOR") );
-				if (e === true)  {
+				boolean e = this.meuCaixa.realizaTransferencia(getInt("NÚMERO DA CONTA DE ORIGEM"), getInt("SENHA DA CONTA DE ORIGEM"), getInt("NÚMERO DA CONTA DE DESTINO"), (double) getInt("VALOR") );
+				if (e == true)  {
 					System.out.println("TRANSFERÊNCIA BANCÁRIA REALIZADA COM SUCESSO");
 				} else  {
 					System.out.println("TRANSFERÊNCIA RECUSADA, TENTE NOVAMENTE MAIS TARDE");
