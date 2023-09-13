@@ -66,7 +66,7 @@ public class Caixa {
 	public boolean realizaTransferencia(int numeroDaContaO, int senha, int numeroDaContaD, double valor) {
 		Conta contaOrigem = this.bdContas.buscaConta(numeroDaContaO);
 		Conta contaDestino = this.bdContas.buscaConta(numeroDaContaD);
-		if(contaOrigem == null || contaDestino == null || this.consultaSaldo(numeroDaContaO, numeroDaContaD) != -1) {
+		if(contaOrigem == null || contaDestino == null) {
 			return false;
 		}
 		else
