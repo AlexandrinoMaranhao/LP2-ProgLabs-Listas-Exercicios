@@ -75,7 +75,7 @@ public class Caixa {
 			return true;
 	}
 	
-	public boolean exibeExtrato(int numeroDaConta) {
+	public boolean exibeExtrato(int numeroDaConta, int senha) {
 		Conta conta = this.bdContas.buscaConta(numeroDaConta);
 		if(conta == null) {
 			return false;
