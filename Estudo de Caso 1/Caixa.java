@@ -81,11 +81,12 @@ public class Caixa {
 			return false;
 		}
 		
-		else
+		else {
 		System.out.println("ESSE É O HISTÓRICO DAS ÚLTIMAS 10 OPERAÇÕES REALIZADAS NA CONTA DE NÚMERO " + numeroDaConta);
-		HistoricoDeLancamentos historico = new HistoricoDeLancamentos(numeroDeLancamentos);
+		HistoricoDeLancamentos historico = new HistoricoDeLancamentos(10);
 		historico.geraHistoricoDeLancamentos();
 		return true;
+		}
 	}
 	
 	public void recarregarCaixa() {
