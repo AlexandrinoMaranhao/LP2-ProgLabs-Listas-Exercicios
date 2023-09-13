@@ -24,6 +24,7 @@ public class Terminal {
 				} else {
 					System.out.println("SENHA OU CONTA INVÁLIDA, IMPOSSÍVEL ACESSAR SALDO");
 				}
+				break;
 			case 2:
 				boolean b = this.meuCaixa.efetuaSaque(getInt("NÚMERO DA CONTA"), (double) getInt("VALOR"), getInt("SENHA"));
 				if (b == true) {
