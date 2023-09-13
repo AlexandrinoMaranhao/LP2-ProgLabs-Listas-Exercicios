@@ -63,14 +63,14 @@ public class Caixa {
 		return true;
 	}
 	
-	public boolean realizaTransferencia(int numeroDaConta, int senha, int numeroDaContaD, double valor) {
-		Conta contaOrigem = this.bdContas.buscaConta(numeroDaConta);
+	public boolean realizaTransferencia(int numeroDaContaO, int senha, int numeroDaContaD, double valor) {
+		Conta contaOrigem = this.bdContas.buscaConta(numeroDaContaO);
 		Conta contaDestino = this.bdContas.buscaConta(numeroDaContaD);
-		if(contaOrigem == null || contaDestino == null || this.consultaSaldo(numeroDaConta, numeroDaContaD) != -1) {
+		if(contaOrigem == null || contaDestino == null || this.consultaSaldo(numeroDaContaO, numeroDaContaD) != -1) {
 			return false;
 		}
 		else
-			contaOrigem.debitaValorTransferencia(valor, numeroDaConta, senha,  " DÉBITO DE TRANSFERÊNCIA");
+			contaOrigem.debitaValorTransferencia(valor, numeroDaContaO, senha,  " DÉBITO DE TRANSFERÊNCIA");
 			contaDestino.creditaValor(valor, numeroDaContaD, " CRÉDITO DE TRANSFERÊNCIA");
 			return true;
 	}
