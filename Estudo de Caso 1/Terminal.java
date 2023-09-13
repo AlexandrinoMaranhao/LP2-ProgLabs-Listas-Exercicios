@@ -58,7 +58,7 @@ public class Terminal {
 				}
 				break;
 			case 6:
-				boolean f = this.meuCaixa.exibeExtrato(getInt("NÚMERO DA CONTA"));
+				boolean f = this.meuCaixa.exibeExtrato(getInt("NÚMERO DA CONTA"), getInt("SENHA DA CONTA");
 				if (f == true)  {
 					System.out.println("EXTRATO BANCÁRIO EMITIDO DE FORMA AUTOMÁTICA");
 				} else  {
