@@ -42,4 +42,8 @@ public class Ponto2D {
 	public Ponto2D somaPonto(Ponto2D p) {
 		return new Ponto2D(this.eixoX + p.getEixoX(), this.eixoY + p.getEixoY());
 	}
+
+	public Ponto2D clone(){
+		return new Ponto2D(this)
+	}
 }
