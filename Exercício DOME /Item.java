@@ -1,3 +1,4 @@
+package dome
 import java.lang.reflect.Constructor;
 
 public class Item {
@@ -17,6 +18,14 @@ public class Item {
 	
 	
 	public void imprime(){
-		
+	    System.out.println(this.titulo + "\n(" + this.ano + ")" + "\n(" + this.tempReproducao + " min)");
+
+	    if(this.gotIt == true){
+		    System.out.println("*");
+	    } else {
+		    Systme.out.println();
+	    }
+
+	    System.out.println("   " + this.comentario);
 	}
 }
