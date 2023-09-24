@@ -9,6 +9,8 @@ public class Filme extends Item {
 	
 	
 	public void imprime() {
-		
+		super.imprime();
+		System.out.println("Diretor: " + this.diretor);
+		System.out.println("Ano: " + this.ano);
 	}
 }
