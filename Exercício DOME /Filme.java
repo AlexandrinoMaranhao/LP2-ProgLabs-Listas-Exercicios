@@ -1,3 +1,5 @@
+package dome
+
 public class Filme extends Item {
 	private String diretor;
 	
