@@ -1,4 +1,4 @@
-
+package dome
 
 public class Album extends Item{
 	private String artista;
@@ -9,6 +9,8 @@ public class Album extends Item{
 	}
 	
 	public void imprime() {
-		
+		super.imprime();
+		System.out.println("Artista: " + this.artista);
+		System.out.println("Número de Faixas: " + this.numeroDeFaixas);
 	}
 }
