@@ -44,6 +44,22 @@ public class Ponto2D {
 	}
 
 	public Ponto2D clone(){
-		return new Ponto2D(this)
+		return new Ponto2D(this);
+	}
+	
+	public String toString() {
+		return "Coordenadas do Ponto de Duas Dimensões: " + "(" + this.eixoX + " , " + this.eixoY + ")";
+		
+	}
+	
+	
+	public boolean equals(Object p) {
+		if (p instanceof Ponto2D) {
+			Ponto2D ponto = (Ponto2D) p;
+			return this.eixoX == (ponto.getEixoX()) && this.eixoY == (ponto.getEixoY());
+			
+		} else
+			return false;
+		
 	}
 }
