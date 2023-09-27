@@ -3,7 +3,7 @@ package atividade1;
 public class Pixel extends Ponto2D{
 	private int valorCor;
 	
-	public Pixel(double eixoX, double eixoY, int valrCor) {
+	public Pixel(double eixoX, double eixoY, int valorCor) {
 		
 		super(eixoX, eixoY);
 		this.valorCor = valorCor%100;
@@ -24,5 +24,10 @@ public class Pixel extends Ponto2D{
 	
 	public void deslocaPixel(double dx, double dy) {
 		super.desloca(dx, dy);
+	}
+
+	public String toString() {
+		return "Coordenadas e Valor da cor do Pixel: " + "(" + this.eixoX + ", " + this.eixoY + ", " + ")";
+		
 	}
 }
