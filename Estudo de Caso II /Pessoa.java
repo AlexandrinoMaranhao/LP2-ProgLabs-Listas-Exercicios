@@ -10,4 +10,8 @@ public class Pessoa {
 	  public String getNomeLicitante() {
 		return this.nome;
 	  }
+
+	  public void setNomeLicitante(String novoNome) {
+		this.nome = novoNome;
+	  }
 }
