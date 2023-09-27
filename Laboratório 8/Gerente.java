@@ -26,4 +26,16 @@ public class Gerente extends Funcionario {
 		this.sistemaSenha = senhaAcesso;
 	}
 
+	public double calculaBonus() {
+		double bonificacao;
+		bonificacao = this.getSalario() + 500;
+		return bonificacao;
+	}
+	
+	public void mostraDados() {
+		super.mostraDados();
+		System.out.println("Bonificação do Cargo de Gerente: " + calculaBonus() + "\n");
+		System.out.println("Credenciais de Acesso ao Sistema \n" + "Login: " + this.sistemaLogin + "\n" + "Senha: " + this.sistemaSenha + "\n");
+	}
+
 }
