@@ -11,19 +11,19 @@ public class Gerente extends Funcionario {
 	}
 
 	public String getSistemaLogin() {
-		return this.usuarioAcesso;
+		return this.sistemaLogin
 	}
 
-	public void setSistemaLogin(String login) {
-		this.usuarioAcesso = usuarioAcesso;
+	public void setSistemaLogin(String novoLogin) {
+		this.sistemaLogin = novoLogin;
 	}
 
 	public String getSistemaSenha() {
 		return this.sistemaSenha;
 	}
 
-	public void setSistemaSenha(String senha) {
-		this.sistemaSenha = senhaAcesso;
+	public void setSistemaSenha(String novaSenha) {
+		this.sistemaSenha = novaSenha;
 	}
 
 	public double calculaBonus() {
