@@ -27,7 +27,7 @@ public class Pixel extends Ponto2D{
 	}
 
 	public String toString() {
-		return "Coordenadas e Valor da cor do Pixel: " + "(" + this.eixoX + ", " + this.eixoY + ", " + ")";
+		return "Coordenadas e Valor da cor do Pixel: " + "(" + this.eixoX + ", " + this.eixoY + ", " + this.valorCor + ")";
 		
 	}
 }
