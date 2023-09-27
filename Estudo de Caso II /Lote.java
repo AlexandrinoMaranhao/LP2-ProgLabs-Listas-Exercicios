@@ -23,6 +23,18 @@ public class Lote {
 	}
 
 	public void lancePara(double valor, Pessoa licitante) {
+		if (this.maiorLance == null || (this.maiorLance.getValorLance() < valor)) {
+			this.setMaiorLance(new Lance(valor, licitante));
+		} else {
+			mostraDadosLote();
+		}
+	}
 
+	public String mostraDadosLote() {
+		return "Lote no: " + this.getNumeroLote() + "(" + this.getDescricao() + ")" + "Atualmente tem um lance mínimo de: " + this.maiorLance.getValorLance();
+	}
+
+	public void setMaiorLance(Lance maiorLance) {
+		this.maiorLance = maiorLance;
 	}
 }
