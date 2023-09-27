@@ -4,13 +4,11 @@ import java.lang.reflect.Constructor;
 
 public class Funcionario {
 	private String nome;
-	private String codigoFuncionario;
-	private double salarioBase;
+	private double salario;
 	private static double valeRefeicaoDiario = 15.0;
 	
-	public Funcionario(String nome, String codigoFunc, double salarioBase) {
+	public Funcionario(String nome, double salario) {
 		this.nome = nome;
-		this.codigoFuncionario = codigoFunc;
 		this.salarioBase = salarioBase;
 
 	}
@@ -19,27 +17,25 @@ public class Funcionario {
 		return this.nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNome(String nomeNovo) {
+		this.nome = nomeNovo;
 	}
 
-	public String getCodigoFuncionario() {
-		return this.codigoFuncionario;
+	public double getSalario() {
+		return this.salario;
 	}
 
-	public void setCodigoFuncionario(String codigoFunc) {
-		this.codigoFuncionario = codigoFunc;
-	}
-
-	public double getSalarioBase() {
-		return this.salarioBase;
-	}
-
-	public void setSalarioBase(double salarioBase) {
-		this.salarioBase = salarioBase;
+	public void setSalario(double valor) {
+		this.salario = valor;
 	}
 	
 	public static void reajusteValeRefeicao() {
-		
+		Funcionario.valeRefeicaoDiario += 15.0;
 	}
+	
+	public static double getValorValeRefeicao() {
+		return Funcionario.valeRefeicaoDiario;
+	}
+
+	
 }
