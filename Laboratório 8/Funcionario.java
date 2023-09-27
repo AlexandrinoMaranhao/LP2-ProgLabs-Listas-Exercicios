@@ -37,5 +37,16 @@ public class Funcionario {
 		return Funcionario.valeRefeicaoDiario;
 	}
 
+	public double calculaBonus() {
+		double bonificacao;
+		bonificacao = this.salario * 0.10;
+		return bonificacao;
+	}
+	
+	public void mostraDados() {
+		System.out.println("Nome do Funcionário: " + this.nome + "\n" + "Salário: " + this.salario + "\n");
+		System.out.println("Bonificação do Cargo: " + calculaBonus());
+	}
+
 	
 }
