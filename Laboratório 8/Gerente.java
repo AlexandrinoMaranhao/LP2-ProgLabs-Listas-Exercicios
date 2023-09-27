@@ -1,29 +1,29 @@
 package banco.gestaopessoal;
 
 public class Gerente extends Funcionario {
-	private String usuarioAcesso;
-	private String senhaAcesso;
+	private String sistemaLogin;
+	private String sistemaSenha;
 
-	public Gerente(String nome, String codigoFunc, double salarioBase, String sistemaLogin, String sistemaSenha) {
-		super(nome, codigoFunc, salarioBase);
-		this.usuarioAcesso = sistemaLogin;
-		this.senhaAcesso = sistemaSenha;
+	public Gerente(String nome, double salario, String login, String senha) {
+		super(nome, salario);
+		this.sistemaLogin = login;
+		this.sistemaSenha = senha;
 	}
 
-	public String getUsuarioAcesso() {
+	public String getSistemaLogin() {
 		return this.usuarioAcesso;
 	}
 
-	public void setUsuarioAcesso(String usuarioAcesso) {
+	public void setSistemaLogin(String login) {
 		this.usuarioAcesso = usuarioAcesso;
 	}
 
-	public String getSenhaAcesso() {
-		return this.senhaAcesso;
+	public String getSistemaSenha() {
+		return this.sistemaSenha;
 	}
 
-	public void setSenhaAcesso(String senhaAcesso) {
-		this.senhaAcesso = senhaAcesso;
+	public void setSistemaSenha(String senha) {
+		this.sistemaSenha = senhaAcesso;
 	}
 
 }
