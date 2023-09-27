@@ -3,8 +3,8 @@ package banco.gestaopessoal;
 public class Secretaria extends Funcionario {
 	private int numeroRamal;
 
-	public Secretaria(String nome, String codigoFunc, double salarioBase, int numRamal) {
-		super(nome, codigoFunc, salarioBase);
+	public Secretaria(String nome, double salario, int numRamal) {
+		super(nome, salario);
 		this.numeroRamal = numRamal;
 	}
 
@@ -12,7 +12,7 @@ public class Secretaria extends Funcionario {
 		return this.numeroRamal;
 	}
 
-	public void setNumeroRamal(int numeroRamal) {
+	public void setNumeroRamal(int numero) {
 		this.numeroRamal = numeroRamal;
 	}
 	
