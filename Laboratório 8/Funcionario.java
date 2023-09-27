@@ -44,7 +44,7 @@ public class Funcionario {
 	}
 	
 	public void mostraDados() {
-		System.out.println("\nNome do Funcionário: " + this.nome + "\nSalário: " + this.salario + "\nBonificação do Cargo: " + calculaBonus());
+		System.out.println("\nNome do Funcionário: " + this.nome + "\nSalário: " + this.salario + "\nBonificação do Cargo: " + calculaBonus()+ "\nVale Refeição Diário: " + Funcionario.getValorValeRefeicao());
 	}
 
 	
