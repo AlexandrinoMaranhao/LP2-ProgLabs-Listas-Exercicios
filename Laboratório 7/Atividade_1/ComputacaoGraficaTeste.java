@@ -11,7 +11,7 @@ public class ComputacaoGraficaTeste {
 		Pixel px = new Pixel(4.0, 4.0, 55);
 		 
 		pt1.desloca(4.0, 5.0);
-		pt2.desloca(5.0, 5.0, 5.0);
+		pt4.desloca(5.0, 5.0, 5.0);
 		px.deslocaPixel(5.0, 5.0);
 		px.mudaCor(65);
 		System.out.println(px);
