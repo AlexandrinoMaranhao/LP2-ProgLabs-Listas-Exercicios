@@ -30,5 +30,10 @@ public class Ponto3D extends Ponto2D {
 		public Ponto3D somaPonto(double dx, double dy, double dz) {
 		    return new Ponto3D(super.getEixoX() + dx, super.getEixoY() + dy, this.eixoZ + dz);
 		}
+
+	'	public String toString() {
+			return "Coordenadas do Ponto de Três Dimensões: " + "(" + this.eixoX + ", " + this.eixoY + ", " + this.eixoZ + ")";
+			
+		}
 		
 }
