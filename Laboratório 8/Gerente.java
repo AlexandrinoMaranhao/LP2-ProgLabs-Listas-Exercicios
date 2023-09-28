@@ -28,13 +28,13 @@ public class Gerente extends Funcionario {
 
 	public double calculaBonus() {
 		double bonificacao;
-		bonificacao = this.getSalario() + 500;
+		bonificacao = 500;
 		return bonificacao;
 	}
 	
 	public void mostraDados() {
 		super.mostraDados();
-		System.out.println("Credenciais de Acesso ao Sistema" + "\nLogin: " + this.sistemaLogin + "\nSenha: " + this.sistemaSenha);
+		System.out.println("** Credenciais de Acesso ao Sistema **" + "\nLogin: " + this.sistemaLogin + "\nSenha: " + this.sistemaSenha);
 	}
 
 }
