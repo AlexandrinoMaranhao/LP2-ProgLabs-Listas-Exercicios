@@ -29,22 +29,29 @@ public class Funcionario {
 		this.salario = valor;
 	}
 	
-	public static void reajusteValeRefeicao() {
-		Funcionario.valeRefeicaoDiario += 15.0;
+	public static double reajusteValeRefeicao(double valor) {
+		return Funcionario.valeRefeicaoDiario += valor;
 	}
 	
 	public static double getValorValeRefeicao() {
 		return Funcionario.valeRefeicaoDiario;
 	}
-
+	
 	public double calculaBonus() {
 		double bonificacao;
 		bonificacao = this.salario * 0.10;
 		return bonificacao;
 	}
+
+	public double somaBonus(){
+        calculaBonus();
+        getSalario();
+        this.salario += calculaBonus();
+        return this.salario;
+    	} 
 	
 	public void mostraDados() {
-		System.out.println("\nNome do Funcionário: " + this.nome + "\nSalário: " + this.salario + "\nBonificação do Cargo: " + calculaBonus()+ "\nVale Refeição Diário: " + Funcionario.getValorValeRefeicao());
+	  	System.out.println("\nNome do Funcionário: " + this.nome + "\nSalário Bruto: " + this.salario + "\nSalário com Bonificação do Cargo: " + somaBonus()+ "\nVale Refeição Diário: " + Funcionario.getValorValeRefeicao());
 	}
 
 	
