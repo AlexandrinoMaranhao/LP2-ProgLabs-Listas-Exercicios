@@ -23,7 +23,7 @@ public class Leilao {
 			System.out.println(lote.getNumeroLote() + ":" + lote.getDescricao());
 			Lance melhorLance = lote.getMaiorLance();
 
-			if (melhorLance == null) {
+			if (melhorLance != null) {
 				System.out.println("   Lance:" + melhorLance.getValorLance());
 			} else {
 				System.out.println("   (Nenhum lance foi feito)");
