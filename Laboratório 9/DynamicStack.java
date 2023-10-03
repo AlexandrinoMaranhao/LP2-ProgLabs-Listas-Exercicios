@@ -9,12 +9,16 @@ public class DynamicStack implements ASimpleStack {
 		this.topo = 0;
 	}
 
+	public DynamicStack() {
+
+	}
+
 	public void push(char dado) {
 		if (this.topo == this.dadosDaPilha.length) {
 			char[] t = new char[this.dadosDaPilha.length * 2];
 
 			for (int i = 0; i < this.topo; i++) {
-					
+
 			}
 		}
 
@@ -34,5 +38,17 @@ public class DynamicStack implements ASimpleStack {
 
 	public boolean isFull() {
 		return false;
+	}
+
+	public void reset() {
+		this.topo = 0;
+	}
+
+	public char peek(){
+		if (isEmpty()) {
+			System.out.println("PILHA VAZIA");
+			return (char) 0;
+		}
+		return this.dadosDaPilha[topo++];
 	}
 }
