@@ -5,7 +5,7 @@ interface ASimpleStack {
 	char pop();
 	boolean isEmpty();
 	boolean isFull();
-	//void reset();
-	//char peek();
-	//int size();
+	void reset();
+	char peek();
+	int size();
 }
