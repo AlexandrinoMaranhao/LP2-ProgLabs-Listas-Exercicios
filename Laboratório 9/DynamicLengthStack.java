@@ -1,15 +1,15 @@
 package poo.pilhas;
 
-public class DynamicStack implements ASimpleStack {
+public class DynamicLengthStack implements ASimpleStack {
 	private char[] dadosDaPilha;
 	private int topo;
 
-	public DynamicStack(int tamanho) {
+	public DynamicLengthStack(int tamanho) {
 		this.dadosDaPilha = new char[tamanho];
 		this.topo = 0;
 	}
 
-	public DynamicStack() {
+	public DynamicLengthStack() {
 
 	}
 
@@ -18,9 +18,11 @@ public class DynamicStack implements ASimpleStack {
 			char[] t = new char[this.dadosDaPilha.length * 2];
 
 			for (int i = 0; i < this.topo; i++) {
-
+			   t[i] = this.dadosDaPilha[i];
 			}
+			this.dadosDaPilha = t;
 		}
+		this.dadosDaPilha[topo++] = dado;
 
 	}
 
@@ -41,7 +43,7 @@ public class DynamicStack implements ASimpleStack {
 	}
 
 	public void reset() {
-		this.dadosPilha[topo] = 0;
+		this.dadosDaPilha[topo] = 0;
 	}
 
 	public char peek() {
@@ -53,6 +55,9 @@ public class DynamicStack implements ASimpleStack {
 	}
 
 	public int size() {
-	
+		if (isEmpty()) {
+			return (char) 0;
+		}
+		return this.dadosDaPilha.length;
 	}
 }
