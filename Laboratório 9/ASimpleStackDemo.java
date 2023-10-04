@@ -2,7 +2,7 @@ package poo.pilhas;
 
 public class ASimpleStackDemo {
 	public static void main(String[] args) {
-			ASimpleStack s;
+		ASimpleStack s;
 		FixedLengthStack fls = new FixedLengthStack(9);
 		FixedLengthStack fls1 = new FixedLengthStack();
 		DynamicStack ds = new DynamicStack(9);
