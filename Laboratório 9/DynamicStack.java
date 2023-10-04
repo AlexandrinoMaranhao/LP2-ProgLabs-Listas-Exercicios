@@ -41,14 +41,18 @@ public class DynamicStack implements ASimpleStack {
 	}
 
 	public void reset() {
-		this.topo = 0;
+		this.dadosPilha[topo] = 0;
 	}
 
-	public char peek(){
+	public char peek() {
 		if (isEmpty()) {
 			System.out.println("PILHA VAZIA");
 			return (char) 0;
 		}
 		return this.dadosDaPilha[topo++];
+	}
+
+	public int size() {
+	
 	}
 }
