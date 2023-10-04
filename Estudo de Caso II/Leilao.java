@@ -1,7 +1,7 @@
 package poo.interfacepregao;
 
 import java.util.ArrayList;
-//import java.util.Iterator;
+
 
 import poo.gestaodelotes.Pessoa;
 import poo.gestaodelotes.Lance;
