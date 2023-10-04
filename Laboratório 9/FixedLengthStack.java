@@ -40,7 +40,7 @@ public class FixedLengthStack implements ASimpleStack {
 	}
 
 	public void reset() {
-		this.topo = 0;
+		this.dadosDaPilha[topo] = 0;
 	}
 
 	public char peek() {
