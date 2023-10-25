@@ -1,6 +1,9 @@
 public class Admin {
-    
+    private String loginUsuarioAdmin;
+    private String loginSenhaAdmin;
 
+    
+    
     public void registraNovoUsuario(){
         /*
          *   seleciona o tipo de usuario que vai ser cadastrado (???) -> determina o privilégio
