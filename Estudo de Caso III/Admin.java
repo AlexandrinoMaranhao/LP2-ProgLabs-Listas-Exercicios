@@ -1,5 +1,6 @@
 public class Admin {
-    
+    private String loginUsuarioAdmin;
+    private String loginSenhaAdmin;
 
     public void registraNovoUsuario(){
         /*
