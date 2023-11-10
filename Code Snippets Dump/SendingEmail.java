@@ -1,4 +1,4 @@
-
+import java.awt.Desktop;
 
 Desktop desktop = Desktop.getDesktop();
 String message = "mailto:dummy@domain.com?subject=First%20Email";
