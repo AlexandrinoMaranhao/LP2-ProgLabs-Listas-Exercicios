@@ -6,4 +6,4 @@
 **Listas de Exercícios**;  
 **Trechos de código**;  
 
-*Desenvolvidos e em desenvolvimente durante o decorrer da Disciplina de Linguagem de Programação II (LP2) do período 2023.2 *
+*Desenvolvidos e em desenvolvimente durante o decorrer da Disciplina de Linguagem de Programação II (LP2) do período 2023.2*
