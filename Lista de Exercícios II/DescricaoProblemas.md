@@ -36,7 +36,7 @@ seguinte fórmula:**
 ## PROBLEMA 04
 **A classe GregorianCalendar descreve um ponto no tempo, como medido pelo calendário
 gregoriano, o calendário padrão comumente utilizado em quase todo o mundo. Você constrói um
-objeto GregorianCalendar a partir de um ano, mês e dia, como no exemplo a seguir:
+objeto GregorianCalendar a partir de um ano, mês e dia, como no exemplo a seguir:**
 
 ```java
 GregorianCalendar cal = new GregorianCalendar(); //Data atual
